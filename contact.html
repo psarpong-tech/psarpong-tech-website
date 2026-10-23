@@ -101,6 +101,26 @@
           </div>
 
           <form class="contact-form" id="contact-form">
+            <input
+                type="hidden"
+                name="access_key"
+                value="dd36e1ed-9a6d-4fa9-88d0-3983f41ffc57"
+            >
+            <input
+                type="hidden"
+                name="subject"
+                value="New Business Enquiry - PSARPONG TECH"
+            >
+            <input
+                type="hidden"
+                name="from_name"
+                value="PSARPONG TECH Website"
+            >
+            <div class="form-field" style="display:none;" aria-hidden="true">
+                <label for="website">Leave this field empty</label>
+                <input id="website" name="botcheck" tabindex="-1" autocomplete="off">
+            </div>
+
             <div class="form-row">
               <div class="form-field">
                 <label for="name">Full name *</label>
@@ -142,11 +162,10 @@
                 required placeholder="Tell us a little about your needs."></textarea>
             </div>
 
-            <button class="button" type="submit">Prepare Enquiry →</button>
+            <button class="button" type="submit">Review Enquiry →</button>
 
             <p class="form-disclaimer">
-              This is currently a front-end demonstration. Your information
-              will not be sent or stored.
+                You will be able to review your enquiry before confirming submission.
             </p>
 
             <p class="form-feedback" id="form-feedback"
@@ -203,25 +222,5 @@
       <a href="#main">Back to top ↑</a>
     </div>
   </footer>
-
-  <script>
-    const contactForm = document.querySelector("#contact-form");
-    const feedback = document.querySelector("#form-feedback");
-
-    if (contactForm && feedback) {
-      contactForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        if (!contactForm.reportValidity()) {
-          return;
-        }
-
-        feedback.textContent =
-          "Your details look complete, but this demonstration cannot send your enquiry yet. A real submission service will be connected later.";
-
-        feedback.classList.add("is-visible");
-      });
-    }
-  </script>
 </body>
 </html>
